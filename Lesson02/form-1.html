@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - Các thành phần trên form</title>
+    <style>
+        form{
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: .5rem;
+        }
+        div{
+            display: flex;
+            margin: .5rem;
+        }
+        div > label {
+            width: 150px;
+            display: block;
+        }
+        input:not([type="color"]) {
+            padding: .25rem;
+            border: 1px solid #ccc;
+            border-radius: .15rem;
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Form - Các thành phần trên form</h1>
+    <form action="" method="post">
+        <div>
+            <label for="name">Họ và tên</label>
+            <input type="text" name="name" id="name" placeholder="Nhập họ tên.." required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+        </div>
+        <div>
+            <label for="pass">Mật khẩu</label>
+            <input type="password" name="pass" id="pass"  max="25" min="8" required>
+        </div>
+        <div>
+            <label for="gioiTinh">Giới tính</label>
+                <input type="radio" name="gt" id="nam" checked /> <label for="nam">Nam</label>
+                <input type="radio" name="gt" id="nu"  /> <label for="nu">Nữ</label>
+                <input type="radio" name="gt" id="khac"  /> <label for="khac">Khác</label>
+        </div>
+        <div>
+
+            <label for="mau">Màu yêu thích:</label>
+            <input type="color" name="mau" id="mau" value="red">
+        </div>
+        <div>
+            <label for="noiSinh">Nơi sinh</label>
+            <select name="noiSinh" id="noiSinh">
+                <option value="">----Chọn-----</option>
+                <option value="HN">Tp. Hà nội</option>
+                <option value="HCM">Tp. HCM</option>
+                <option value="ĐN">Đà nẵng</option>
+                <option value="HP">Hải phòng</option>
+            </select>
+        </div>
+        <div>
+            <label for="ngaySinh">Ngày sinh</label>
+            <input type="datetime-local" name="ngaySinh" id="ngaySinh">
+        </div>
+        <div>
+            <label for="diaChi">Địa chỉ</label>
+            <textarea name="diaChi" id="diaChi"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Đăng ký"/>
+        </div>
+    </form>
+</body>
+</html>
