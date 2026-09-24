@@ -1,0 +1,14 @@
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.card{
+    background-color: green;
+    padding: 1rem;
+    border-radius: .25rem;
+    color: #fff;
+    text-align: center;
+}

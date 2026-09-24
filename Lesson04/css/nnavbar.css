@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid green; */
+}
+
+nav.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    height: 70px;
+}
+
+.menu{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+    transition: all .3s;
+}
+nav a:hover{
+    color: yellow;
+}
+
+nav button{
+    padding: .25rem .5rem;
+    border: none;
+    background-color: green;
+    color: #fff;
+    cursor: pointer;
+}
