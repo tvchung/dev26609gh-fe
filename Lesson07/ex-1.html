@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng javascript trong HTML</title>
+</head>
+<body>
+    <h1>Sử dụng javascript trong HTML</h1>
+    <!-- js  inline   -->
+    <button onclick="alert('Xin chào, Tôi là javascript')">Click here</button>
+    
+    <!-- internal js  -->
+
+    <script>
+        // các mã  lệnh bằng ngôn ngư javascript (js)
+        alert("Internal javascript");
+
+        document.write("<h2> Đây là nội dung từ javascript </h2>");
+    </script>
+
+    <!-- external js (ex-1.js) -->
+    <script src="js/ex-1.js"></script>
+
+    <button onclick="fn_Show()">Gọi hàm fn_show</button>
+</body>
+</html>

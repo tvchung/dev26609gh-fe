@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biến, hằng trong javascript</title>
+</head>
+<body>
+    <h1>Biến, hằng trong javascript</h1>
+
+    <script>
+        // Biến:
+        var  name;
+        // gán:
+        name="Chung  Trịnh";
+        document.write("<h2> Xin chào, " + name + "</h2>");
+        // khai báo và gán giá trị
+        age=45; // biến kiểu số nguyên
+        document.write("<p>Age: " + age);
+
+        var age=450; // biến kiểu số nguyên
+        document.write("<p>Age: " + age);
+
+        let salary = 1234.5; // khai  báo và gán giá trị
+        document.write("<p>let: salary: " + salary)
+
+        // let salary=111333.444; => lỗi
+        salary=111333.444;
+        document.write("<p>let: salary: " + salary)
+        // hằng
+        const PI=3.1415;
+        document.write("<p> hằng số PI:"+ PI);
+
+        document.write("<p>Kiểu dữ liệu:");
+        document.write("<p> type (name): " + typeof(name));
+        document.write("<p> type (age): " + typeof(age));
+        document.write("<p> type (salary): " + typeof(salary));
+
+        // hàm hệ thống: alert; confirm; prompt
+        alert("Xin chào, tôi là Javascript");
+
+        res = confirm("Bạn có muốn xóa không");
+        if(res == true){
+            alert("Bạn chọn có");
+        }else{
+            alert("Bạn chọn không.")
+        }
+        
+        // prompt
+
+        name  = prompt("Nhập tên của bạn:");
+        document.write("<p> Xin chào, " + name)
+
+    </script>
+</body>
+</html>
