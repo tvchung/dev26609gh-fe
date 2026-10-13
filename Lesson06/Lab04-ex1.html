@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab04 - ex1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --primary-color: #ff9900;
+            --background-color: #f5f5f5;
+            --text-color:#333;
+            --border-radius: 10px;
+        }
+        .product-box{
+            /* width: 100%; */
+            width:220px;
+            border:2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            background-color: var(--background-color);
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        /* góc gấp */
+        .corner{
+            position: absolute;
+            top:-1px;
+            right:-1px;
+            width: 0;
+            height: 0;
+            border-top:2rem solid var(--primary-color);
+            border-left:2rem solid transparent; 
+            border-top-right-radius: var(--border-radius);
+        }
+        .corner::after{
+            content:"\f00c";
+            font-family: "Font Awesome 6 Free";
+            position: absolute;
+            top: -1.75rem;
+            right: .35rem;
+            color: #fff;
+            font-weight: bold;
+            font-size: .65rem;
+        }
+
+        .product-name h3{
+            /* font-size:1.2rem; */
+            color: var(--text-color);
+            margin-bottom: .8rem;
+        }
+        .product-price p{
+            font-size: 1.2rem;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+        .product-price sup{
+            font-size: .8rem;
+            color:var(--primary-color);
+            font-weight: bold;
+        }
+        /* xoay lắc */
+        .product-box:hover .corner::after{
+            cursor: pointer;
+            animation: check-wiggle .6s ease infinite;
+        }
+        @keyframes check-wiggle{
+            0%{transform: rotate(0deg);}
+            25%{transform: rotate(-20deg);}
+            50%{transform: rotate(20deg);}
+            75%{transform: rotate(-20deg);}
+            100%{transform: rotate(0deg);}
+        }
+    </style>
+</head>
+<body style="margin:2rem">
+    <div class="product-box">
+        <div class="corner"></div>
+        <div class="product-name">
+            <h3>Macbook Air M4 | core GPPU + 512GB</h3>
+        </div>
+        <div class="product-price">
+            <p>28.790.000<sup>VNĐ</sup></p>
+        </div>
+    </div>
+</body>
+</html>

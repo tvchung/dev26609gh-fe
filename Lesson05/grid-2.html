@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid (tự động) - auto-fit + minmax</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .card{
+            background-color: green;
+            padding: 1rem;
+            border-radius: .5rem;
+            text-align: center;
+            color: #fff;
+        }
+        .product{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 1rem;
+            margin: 1rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Grid (tự động) - auto-fit + minmax</h1>
+    </header>
+    <section class="product">
+        <div class="card">Sản phẩm 1</div>  
+        <div class="card">Sản phẩm 2</div>  
+        <div class="card">Sản phẩm 3</div>  
+        <div class="card">Sản phẩm 4</div>  
+        <div class="card">Sản phẩm 5</div>  
+        <div class="card">Sản phẩm 6</div>  
+        <div class="card">Sản phẩm 7</div>  
+        <div class="card">Sản phẩm 8</div>  
+    </section>
+</body>
+</html>

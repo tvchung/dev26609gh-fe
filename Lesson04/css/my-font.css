@@ -11,3 +11,8 @@
     font-family: "Roboto-Thin";
     src: url('../fonts/Roboto/Roboto-Thin.ttf');
 }
+
+@font-face {
+    font-family: "Roboto-ExtraBold";
+    src: url('../fonts/Roboto/Roboto_SemiCondensed-ExtraBold.ttf');
+}

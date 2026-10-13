@@ -1,0 +1,250 @@
+/* RESET  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+    --green-main: #05a742;
+    --green-light: #038036;
+    --text-white: #fff;
+    --panel-border: #777;
+    --item-border: #038036;
+    --yellow-color: #fff600;
+    --border-radius: 8px;
+    --gap: 1rem;
+}
+
+body {
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    margin: 1rem auto;
+    max-width: 1114px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--gap);
+}
+
+.service-card {
+    border-radius: var(--border-radius);
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: all 1s ease;
+    gap: 10px;
+    border-radius: var(--border-radius);
+    color: var(--text-white);
+}
+
+.service-card:hover .card-overlay {
+    background-color: rgba(41, 167, 6, 0.6);
+    cursor: pointer;
+}
+
+.card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.card-icon {
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background-color: #fff;
+
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 5px solid var(--panel-border);
+}
+
+.card-sub {
+    font-size: .9rem;
+    letter-spacing: 2px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 8px 0 1rem;
+}
+
+.card-link {
+    position: relative;
+    display: inline-block;
+    padding: 6px 20px;
+    text-transform: uppercase;
+    color: var(--text-white);
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+}
+
+/* Các thẻ span tạo 4 vệt sáng chạy dọc theo border */
+.card-link span {
+    position: absolute;
+    display: block;
+}
+
+/* 1. Vệt sáng cạnh trên: chạy từ trái qua phải */
+.card-link span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--yellow-color));
+}
+
+.service-card:hover .card-link span:nth-child(1) {
+    animation: border-run-top 1s linear infinite;
+}
+
+@keyframes border-run-top {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+/* 2. Vệt sáng cạnh phải: chạy từ trên xuống dưới */
+.card-link span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--yellow-color));
+}
+
+.service-card:hover .card-link span:nth-child(2) {
+    animation: border-run-right 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes border-run-right {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+/* 3. Vệt sáng cạnh dưới: chạy từ phải qua trái */
+.card-link span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--yellow-color));
+}
+
+.service-card:hover .card-link span:nth-child(3) {
+    animation: border-run-bottom 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes border-run-bottom {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+/* 4. Vệt sáng cạnh trái: chạy từ dưới lên trên */
+.card-link span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--yellow-color));
+}
+
+.service-card:hover .card-link span:nth-child(4) {
+    animation: border-run-left 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes border-run-left {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+/* Hover trực tiếp vào nút */
+.card-link:hover {
+    background-color: var(--yellow-color);
+    color: var(--green-main);
+    border-color: var(--yellow-color);
+    box-shadow: 0 0 12px var(--yellow-color);
+}
+
+.overlay {
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: all 1s ease;
+    background-color: rgba(6, 159, 60, 0.5);
+    border-radius: var(--border-radius);
+}
+
+.service-card:hover .overlay {
+    width: 100%;
+    height: 100%;
+}
+
+.service-card:hover .card-overlay {
+    background-color: transparent;
+}
+
+.service-card:hover .card-icon img {
+
+    transform: rotate(360deg) scale(1.1);
+    transition: all 1s ease-in-out;
+    border-color: var(--green-light);
+}
