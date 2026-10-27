@@ -44,3 +44,13 @@ const sum = (a,b=100)=>{
 }
 console.log(sum(200)); // 300
 console.log(sum(100,500)); // 600
+
+
+// bài tập: viết  hàm giải phương trình bậc 1
+/*
+    giaiPT1 = (a,b)=>{
+        ....
+        }
+*/
+
+// Viết hàm kiểm tra số num có phải là số nguyên tố không??

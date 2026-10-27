@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tương tác - DOM</title>
+</head>
+<body>
+    <h1 onmouseover="fn_tagHTML()">Tương tác - DOM</h1>
+    <hr>
+    <h2 id="demo">Xin chào</h2>
+    <button onclick="fn_changeText();">Click</button>
+    <div class="noi-dung">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi saepe sit a cupiditate tenetur, minus, aut quo eos eaque facere nam voluptatum magnam cumque illum, obcaecati unde iste inventore. Aperiam.</p>
+        <p>Nội dung trong div .noi-dung</p>
+    </div>
+    <p>Nội dung 1</p>
+    <p>Nội dung 2</p>
+    <button onclick="fn_classHTML(); fn_cssSelector();">Click</button>
+    <script>
+        // tương tác thông qua Id
+        const fn_changeText = ()=>{
+            document.getElementById("demo").innerText = "DOM tương tác thông qua thuộc tính Id";
+        }
+
+        // Tương tác thông qua tag HMTL
+        const fn_tagHTML = ()=>{
+            document.getElementsByTagName("h1")[0].innerHTML="Tương tác - <span style='color:red'>DOM </span>";
+        }
+
+        // Tương tác thông qua thuộc tính class
+        const fn_classHTML = ()=>{
+            document.getElementsByClassName("noi-dung")[0].style.backgroundColor = "#ffcc11";
+        }
+
+        // Tương tác thông quan css Selector: div > p; 
+        const fn_cssSelector = () => {
+            // document.querySelectorAll("div p")[0].style.color = "Blue";
+            document.querySelectorAll("div p").forEach((x)=>{
+                    x.style.color = "Blue"
+                }) 
+            // lặp theo cách truyền thống
+            let elements = document.querySelectorAll("div p");
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.color = "Blue";
+            }
+        }
+    </script>
+</body>
+</html>

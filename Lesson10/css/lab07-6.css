@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin: 1rem auto;
+    width: 80%;
+}
+h1{
+    text-align: center;
+    color: green;
+}
+button{
+    color: green;
+    padding: .5rem 1rem;
+}
+.center{
+    margin: 1rem 0;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    border: 1px solid #ccc;
+
+}
+table tr th, table tr td {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc ;
+    padding: .35rem;
+}
+table thead {
+    background-color: green;
+    color: white;
+}
+table tr th:last-child, table tr td:last-child {
+    border-right: none ;
+}
+table tr:last-child td{
+    border-bottom: none;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
