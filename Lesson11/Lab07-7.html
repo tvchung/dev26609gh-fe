@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng ký</title>
+    <link rel="stylesheet" href="css/dangky.css">
+</head>
+<body>
+    <section id="form">
+        <form action="" method="post">
+            <h1 class="text-center green">ĐĂNG  KÝ THÀNH VIÊN</h1>
+            <div class="form-group">
+                <label for="hoten">Họ và tên</label>
+                <input type="text" name="hoten" id="hoten" 
+                    class="form-control"
+                    placeholder="Nhập họ và tên">
+                <span id="errHoten" class="">Ví dụ: Trịnh Văn Chung</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" 
+                    class="form-control"
+                    placeholder="Nhập email">
+                <span class="">ví dụ: example@gmail.com</span>
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" name="phone" id="phone" 
+                    class="form-control"
+                    placeholder="Nhập điện thoại">
+                <span class="">ví dụ: 0912112112 / +84912112112</span>
+            </div>
+            <div class="form-group">
+                <label for="gender">Giới tính</label>
+                <div>
+                    <input type="radio" name="gt" id="gtNam" >
+                    <label for="gtNam">Nam</label>
+                    
+                    <input type="radio" name="gt" id="gtNu" >
+                    <label for="gtNu">Nữ</label>
+
+                    <input type="radio" name="gt" id="gtKhac" >
+                    <label for="gtKhac">Khác</label>
+                </div>
+                <span class=""></span>
+            </div>
+            <div class="form-group">
+                <label for="sothich">Sở thích</label>
+                <div>
+                    <input type="checkbox" name="sothich" id="stBongDa" >
+                    <label for="stBongDa">Bóng đá</label>
+                    
+                    <input type="checkbox" name="sothichsothich" id="stAmNhac" >
+                    <label for="stAmNhac">Âm nhạc</label>
+
+                    <input type="checkbox" name="sothich" id="stDuLich" >
+                    <label for="stDuLich">Du lịch</label>
+
+                    <input type="checkbox" name="sothich" id="stDocSach" >
+                    <label for="stDocSach">Đọc sách</label>
+                </div>
+                <span class=""></span>
+            </div>
+            <div class="form-group">
+                <label for="matkhau">Mật khẩu</label>
+                <input type="password" name="matKhau" id="matKhau" 
+                    class="form-control"
+                    placeholder="Nhập mật khẩu">
+                <span class="">Ví dụ: Mk@123&$</span>
+            </div>
+            <div class="form-group">
+                <label for="xnmatkhau">Xác nhân mật khẩu</label>
+                <input type="password" name="xnmatkhau" id="xnmatkhau" 
+                    class="form-control"
+                    placeholder="Nhập lại mật khẩu">
+                <span class="">Ví dụ: Mk@123&$</span>
+            </div>
+            <div class="form-group">
+                <label for="diaChi">Địa chỉ</label>
+                <textarea name="diaChi" id="diaChi" rows="4" class="form-control"></textarea>
+                <span class="">Ví dụ: 25 Phố vũ ngọc phan, P. Láng, Tp. Hà nội</span>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-dangky" onclick="return fn_dangky()">Đăng ký</button>
+            </div>
+        </form>
+    </section>
+
+
+    <script src="js/dangky.js"></script>
+</body>
+</html>
