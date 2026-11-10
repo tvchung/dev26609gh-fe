@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhúng thư viện jquery từ trang chủ (google, cdn,...)</title>
+</head>
+<body>
+    <h1>Nhúng thư viện jquery từ trang chủ (google, cdn,...)</h1>
+    <button>Click me!</button>
+    <button id="btn2">Click me!</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // các câu lệnh jquery sẽ được viết ở đây
+           console.log("jquery running....");
+
+           
+           $("#btn2").click(function(){
+                $(this).text("Bạn vừa click vào button#btn2").css("color", "blue");
+           })
+
+            $("button").click(function(){
+                // alert("Bạn vừa click vào button");
+                $(this).css("color", "red").text("Bạn vừa click vào button");
+            });
+
+        });
+    </script>
+</body>
+</html>

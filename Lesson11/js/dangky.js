@@ -32,8 +32,16 @@ const fn_dangky = ()=>{
         document.getElementById("errEmail").classList.add("error"); 
         check=false;  
     }else{
-        document.getElementById("errEmail").innerText="ok";
-        document.getElementById("errEmail").classList.add("success");
+        // kiểm tra email hợp lệ
+        let pattern= /^[a-zA-Z0-9._]+[a-zA-Z0-9_]+@[a-zA-Z0-9-_]+\.[a-zA-Z]{2,4}$/;
+        if(!pattern.test(email)){
+            document.getElementById("errEmail").innerText="Email không đúng định dạng.";
+            document.getElementById("errEmail").classList.add("error"); 
+            check=false;  
+        }else{
+            document.getElementById("errEmail").innerText="ok";
+            document.getElementById("errEmail").classList.add("success");
+        }
     }
     // phone
     let phone = document.getElementById("phone").value;

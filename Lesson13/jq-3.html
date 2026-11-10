@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery selector</title>
+</head>
+<body>
+    <h1>Jquery selector</h1>
+    <button>Click me!</button>
+    <button id="btn2">Click me!</button>
+    <section id="zone1">
+        <p>This is a paragraph inside zone1.</p>
+        <p class="highlight">This is another paragraph inside zone1.</p>
+        <p>This is a third paragraph inside zone1.</p>
+        <div>
+            <p>This is a paragraph inside a div inside zone1.</p>
+        </div> 
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // code jquery sẽ được viết ở đây
+            //1. tương tác với tên thẻ:
+            $("h1").css("color", "red"); // thay đổi màu chữ của thẻ h1 thành màu đỏ
+            $("button").css("background-color", "lightgray"); // thay đổi màu nền của tất cả các button thành màu xám nhạt
+
+            //2. tương tác với id:
+            $("#btn2").css("color", "blue"); // thay đổi màu chữ của button có id là btn2 thành màu xanh dương
+            $("#zone1").css({
+                "border": "2px solid black",
+                "margin": "10px",
+                "padding": "10px"
+            }); // thêm viền cho section có id là zone1
+
+            //3. tương tác với class:
+            $(".highlight").css("background-color", "yellow"); // thay đổi màu nền của tất cả các paragraph có class là highlight thành màu vàng
+            $(".highlight").click(function(){
+                $(this).css("font-weight", "bold").text("Thay doi noi dung");
+            });
+
+            //4. css selector:
+            $("section p:first").css("color", "green"); // thay đổi màu chữ của paragraph đầu tiên trong section thành màu xanh lá cây
+            $("#zone1 div>p").mouseover(function(){
+                $(this).css("color", "orange").css("cursor", "pointer");
+            }).mouseout(function(){
+                $(this).css("color", "black");
+            });
+        });
+    </script>
+</body>
+</html>

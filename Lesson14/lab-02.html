@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thực hành 02:viết một ứng dụng cho phép người dùng click chọn màu chữ thì nội dung thay đổi theo màu đã chọn như hình bên</title>
+    <style>
+        button {
+            margin: .25rem;
+            padding: .5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+
+        <h1>Chọn màu chữ</h1>
+        <blockquote>
+            Bài thực hành 02:viết một ứng dụng cho phép người dùng click chọn màu chữ thì nội dung thay đổi theo màu đã chọn như hình bên
+        </blockquote>
+        <div>
+            <button data-color="red">Đỏ</button>
+            <button data-color="blue">Xanh</button>
+            <button data-color="yellow">Vàng</button>
+            <button data-color="gray">Ghi</button>
+            <button data-color="purple">Tím</button>
+        </div>
+        <div>
+            <p>Lập trình với JavaScript</p>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quis quas quo facilis dolor ab fuga sequi, quisquam officiis excepturi neque, corporis incidunt expedita laboriosam error velit provident culpa ipsam.</p>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            console.log("runing....");
+
+            // đồi màu cho button
+            $("div > button").each(function(){
+                let mau = $(this).attr("data-color");
+                $(this).css("color",mau);
+                $(this).hover(
+                    function(){
+                        $(this).css({
+                            "background": mau,
+                            "color": "white",
+                            "cursor":"pointer",
+                        })
+                    },
+                    function(){
+                        $(this).css({
+                            "background":  "transparent",
+                            "color": mau,
+                            "cursor":"pointer",
+                        });
+                    }
+                );
+            })
+
+            // click => đổi màu chữ với màu của botton
+            $("button").click(function(){
+                let mau = $(this).attr("data-color");
+                // $(this).parent().siblings("div").children("p").css("color",mau);
+                $(this).parent().next().css("color",mau);
+            })
+        })
+    </script>
+</body>
+</html>

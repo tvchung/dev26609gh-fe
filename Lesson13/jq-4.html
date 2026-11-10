@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery selector</title>
+</head>
+<body>
+    <h1>Jquery event</h1>
+    <hr>
+    <section id="zone1">
+        <form>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <span id="nameError" style="color: red;">(*)</span>
+            </div>
+        </form>
+    </section>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // code jquery sẽ được viết ở đây
+           $("input#name").keyup(function(){
+                var nameValue = $(this).val(); // lay gia tri cua input
+                $("#nameError").text(nameValue); // hien thi gia tri cua input vao span#nameError
+
+                if(nameValue.trim() === ""){
+                    $("#nameError").text("Tên không được để trống");
+                }else{
+                    if(nameValue.length < 3){
+                        $("#nameError").text("Tên phải có ít nhất 3 ký tự");
+                    }else{
+                        $("#nameError").text("Tên hợp lệ").css("color", "green");
+                    }
+                }
+           });
+        });
+    </script>
+</body>
+</html>

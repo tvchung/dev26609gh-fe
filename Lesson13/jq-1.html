@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhúng Jquery vào html  - tải thư viện từ trang chủ</title>
+
+</head>
+<body>
+    <h1>Nhúng Jquery vào html - tải thư viện từ trang chủ</h1>
+
+
+    <script src="libs/jquery-4.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // các câu lệnh jquery sẽ được viết ở đây
+            $("h1").click(function(){
+                alert("Bạn vừa click vào thẻ h1");
+                $(this).css("color", "red");
+            });
+        });
+    </script>
+</body>
+</html>

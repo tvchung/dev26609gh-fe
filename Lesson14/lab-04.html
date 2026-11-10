@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thực hành 02:viết một ứng dụng cho phép người dùng click chọn màu chữ thì nội dung thay đổi theo màu đã chọn như hình bên</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lựa chọn nội dung</h1>
+        <hr>
+    </header>
+    <section>
+       <div>
+            <button data-file="html">HTML</button>
+            <button data-file="css">CSS</button>
+            <button data-file="javascript">Javascript</button>
+            <button data-file="php">Lập trình PHP</button>
+       </div>
+       <div id="content">
+            Load nội dung....
+       </div>
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            console.log("runing....");
+
+            $("button").click(function(){
+                let file =  $(this).attr("data-file");
+
+                $("#content").load("files/"+file+".html");
+            })
+          
+        })
+    </script>
+</body>
+</html>

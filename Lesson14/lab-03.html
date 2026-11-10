@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thực hành 02:viết một ứng dụng cho phép người dùng click chọn màu chữ thì nội dung thay đổi theo màu đã chọn như hình bên</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        section{
+            margin: 1rem auto;
+            width: 555px;
+        }
+        #small-img{
+            display: flex;
+            justify-content: space-between;
+            gap: .5rem;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        img:hover{
+            cursor: pointer;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Album</h1>
+        <hr>
+    </header>
+    <section>
+        <div id="big-img">
+            <img src="images/img1.jpg" alt="">
+        </div>
+        <div id="small-img">
+            <div class="img">
+                <img src="images/img1.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="images/img3.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="images/img4.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="images/img5.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="images/img6.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            console.log("runing....");
+
+            $("img").click(function(){
+                let img_src = $(this).attr("src");
+                console.log(img_src);
+                
+            })
+          
+        })
+    </script>
+</body>
+</html>
