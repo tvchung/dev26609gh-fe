@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <style>
+        .table{
+            width: 80%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Danh sách sản phẩm</h1>
+        <hr/>
+        <div class="list">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Code</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            console.log("runing....");
+
+            // đọc dữ liệu từ api http://apixm.devmaster.vn/api/Products
+            
+            // Javascript: fetch
+            // Jquery: $.ajax ; $.get; $.getJON
+            debugger;
+            $.ajax({
+                
+                url: "http://apixm.devmaster.vn/api/Products",
+                method:"GET",
+                dataType:"json",
+                success:function(products){
+                    console.log("Data:",products);
+                    $('.list tbody').html('');
+                    let str='';
+                    $.each(products,function(index,product){
+                        console.log(index, product);
+                        str += `
+                            <tr>
+                                <td>${index + 1}</td>
+                                <td>${product.code}</td>
+                                <td>${product.title}</td>
+                                <td>${product.priceNew.toLocaleString('vi-VN')}</td>
+                            </tr>
+                        `;
+                    });
+
+                    $('.list tbody ').html(str);
+                },
+
+                error:function(xhr, status, error){
+                    console.log("Lỗi:", xhr, status, error);
+                    
+                }
+            });
+          
+        })
+    </script>
+</body>
+</html>

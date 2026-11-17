@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+</head>
+<body>
+    <section>
+        <h1>Danh sách sản phẩm</h1>
+        <hr/>
+        <div class="list">
+
+        </div>
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            console.log("runing....");
+
+            // đọc dữ liệu từ api http://apixm.devmaster.vn/api/Products
+            
+            // Javascript: fetch
+            // Jquery: $.ajax ; $.get; $.getJON
+            debugger;
+            $.ajax({
+                
+                url: "http://apixm.devmaster.vn/api/Products",
+                method:"GET",
+                dataType:"json",
+                success:function(products){
+                    console.log("Data:",products);
+                    // $('.list').html('');
+                    // let str='';
+                    $.each(products,function(index,product){
+                        console.log(index, product);
+                        str += `
+                            <li> ${product.title} </li>
+                        `;
+                    });
+
+                    $('.list').html(str);
+                },
+
+                error:function(xhr, status, error){
+                    console.log("Lỗi:", xhr, status, error);
+                    
+                }
+            });
+          
+        })
+    </script>
+</body>
+</html>
